@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# PRIVATE — never commit.
+# reference/     : your Apps Script + sheet export (account details)
+# fixtures/raw/  : saved 7Sage / LSAT Demon pages (licensed LSAT content,
+#                  your name, email, user IDs, session tokens)
+# Only fixtures/clean/ (produced by `npm run sanitize`) is committed.
+# ---------------------------------------------------------------------------
+/reference/
+/fixtures/raw/
+/fixtures/*.zip
+
+# clasp stores your script ID and OAuth tokens in these
+.clasp.json
+.clasprc.json
+
+# Secrets / local config
+.env
+.env.*
+*.pem
+
+# Build and signing output
+node_modules/
+web-ext-artifacts/
+.amo-upload-uuid
+.web-extension-id
+*.xpi
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
