@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "LSAT Miss Capture",
+  "version": "0.1.0",
+  "description": "Captures your LSAT misses from 7Sage results pages into the Inbox of your own Google Sheets wrong-answer journal. Stores no question text.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{f6a2ae46-51d4-41e1-badc-55031b9164ab}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["websiteContent", "browsingActivity"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "permissions": ["storage", "alarms", "scripting"],
+  "host_permissions": [
+    "https://7sage.com/*",
+    "https://*.7sage.com/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "shared/constants.js",
+      "shared/mapping.js",
+      "shared/capture.js",
+      "background/storage.js",
+      "background/webapp.js",
+      "background/outbox.js",
+      "background/badge.js",
+      "background/main.js"
+    ]
+  },
+  "action": {
+    "default_title": "LSAT Miss Capture",
+    "default_popup": "pages/popup.html",
+    "default_icon": "icons/icon.svg"
+  },
+  "options_ui": {
+    "page": "pages/options.html",
+    "open_in_tab": true
+  }
+}

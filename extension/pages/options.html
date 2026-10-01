@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LSAT Miss Capture — Setup</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>LSAT Miss Capture</h1>
+      <p class="muted">Sends the questions you missed (and the ones you got right but flagged or changed in blind review) to the Inbox tab of your journal sheet. It stores no question text.</p>
+    </header>
+
+    <section id="step-access" class="card">
+      <h2><span class="step">1</span> Site access</h2>
+      <p>Firefox lets you choose which sites an add-on can read. This one needs:</p>
+      <ul id="origins" class="origins"></ul>
+      <div id="access-missing" class="hidden">
+        <p class="warn">Some access is missing, so captures cannot run there. Click the button, then choose <b>Allow</b> in the Firefox prompt.</p>
+        <button id="grant" class="primary" type="button">Grant access</button>
+        <p class="muted">If the prompt does not appear: open <code>about:addons</code> → LSAT Miss Capture → Permissions, and switch each site on.</p>
+      </div>
+      <p id="access-ok" class="ok hidden">✓ All set.</p>
+    </section>
+
+    <section id="step-webapp" class="card">
+      <h2><span class="step">2</span> Connect your sheet</h2>
+      <p>Deploy the Apps Script as a web app (README → <i>Deploy the web app</i>), then paste its URL and the secret from Script Properties.</p>
+      <form id="webapp-form" autocomplete="off">
+        <label for="url">Web app URL</label>
+        <input id="url" type="url" placeholder="https://script.google.com/macros/s/…/exec" spellcheck="false">
+        <small id="url-problem" class="warn"></small>
+        <label for="secret">Shared secret</label>
+        <div class="row nowrap">
+          <input id="secret" type="password" spellcheck="false">
+          <button id="show-secret" type="button">Show</button>
+        </div>
+        <small class="muted">Stored only in this browser (<code>browser.storage.local</code>). Leave blank to keep the saved one.</small>
+        <div class="row actions">
+          <button class="primary" type="submit">Save</button>
+          <button id="test" type="button">Test connection</button>
+          <span id="webapp-result" role="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <section id="step-capture" class="card">
+      <h2><span class="step">3</span> Capture</h2>
+      <label class="check"><input id="dry-run" type="checkbox"> Dry run</label>
+      <p class="muted">Parses results pages and shows what would be sent, below and in the popup, without writing to the sheet. It may still read your Lists and Mapping tabs so the preview shows final values.</p>
+    </section>
+
+    <section class="card">
+      <h2>Waiting to send</h2>
+      <p class="muted">Anything that could not reach the sheet stays here until it does. Nothing is dropped automatically.</p>
+      <div id="outbox-empty" class="muted">Nothing waiting.</div>
+      <table id="outbox" class="grid hidden">
+        <thead><tr><th>What</th><th>State</th><th>Last error</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="row actions"><button id="flush" type="button">Send now</button></div>
+    </section>
+
+    <section class="card">
+      <h2>Sheet lists and mapping</h2>
+      <p id="config-status" class="muted">Not loaded yet.</p>
+      <p class="muted">Values from 7Sage are translated with the <b>Mapping</b> tab in your sheet (Field, Platform, Site value, Journal value). Anything without a mapping goes through as-is and is flagged in the Inbox <i>Needs review</i> column.</p>
+      <button id="refresh-config" type="button">Reload from sheet</button>
+    </section>
+
+    <section class="card">
+      <h2>Last capture</h2>
+      <p id="last-summary" class="muted">None yet.</p>
+      <div class="scroll"><table id="last-rows" class="grid hidden"><thead></thead><tbody></tbody></table></div>
+    </section>
+
+    <footer class="muted">v<span id="version"></span> · Not affiliated with 7Sage, LSAT Demon, or LSAC.</footer>
+  </main>
+  <script src="../shared/constants.js"></script>
+  <script src="ui.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

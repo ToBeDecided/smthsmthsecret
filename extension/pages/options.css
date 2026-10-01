@@ -1,0 +1,18 @@
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+header { margin-bottom: 16px; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 0 0 16px; background: var(--bg); }
+.step {
+  display: inline-grid; place-items: center;
+  width: 22px; height: 22px; margin-right: 6px;
+  border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px;
+}
+.origins { margin: 0 0 8px; padding-left: 0; list-style: none; }
+.origins li { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 2px 0; }
+.actions { margin-top: 12px; }
+.nowrap { flex-wrap: nowrap; }
+label.check { display: flex; gap: 8px; align-items: center; font-weight: 600; }
+.grid { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+.grid th, .grid td { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+.grid th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.scroll { overflow-x: auto; }
+footer { text-align: center; font-size: 12px; margin-top: 24px; }

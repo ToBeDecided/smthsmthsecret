@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LSAT Miss Capture</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <div id="setup" class="notice hidden">
+      <p id="setup-text"></p>
+      <button id="open-setup" type="button">Open setup</button>
+    </div>
+    <p id="dry" class="notice warn hidden">Dry run is on: nothing is sent to the sheet.</p>
+    <p id="counts" class="counts"></p>
+    <button id="capture" class="primary wide" type="button">Capture this page</button>
+    <p id="result" class="result" role="status"></p>
+    <p id="last" class="muted small"></p>
+    <div class="row links">
+      <button id="options" type="button">Options</button>
+    </div>
+  </div>
+  <script src="../shared/constants.js"></script>
+  <script src="ui.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

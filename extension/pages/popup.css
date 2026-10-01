@@ -1,0 +1,8 @@
+body { width: 320px; }
+.wrap { padding: 12px; }
+.notice { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 8px; margin: 0 0 10px; }
+.counts { font-weight: 600; margin-bottom: 10px; }
+.wide { width: 100%; padding: 8px; }
+.result { min-height: 1.4em; margin: 8px 0; }
+.small { font-size: 12px; }
+.links { justify-content: flex-end; }
