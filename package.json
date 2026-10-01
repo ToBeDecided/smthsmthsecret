@@ -1,0 +1,26 @@
+{
+  "name": "lsat-miss-capture",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Firefox extension that captures LSAT misses from 7Sage and LSAT Demon into a Google Sheets wrong-answer journal.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "lint": "web-ext lint --source-dir extension",
+    "start": "web-ext run --source-dir extension --browser-console",
+    "build": "web-ext build --source-dir extension --overwrite-dest",
+    "sign": "web-ext sign --source-dir extension --channel unlisted",
+    "sanitize": "node scripts/sanitize-fixtures.mjs",
+    "scan": "node scripts/scan-secrets.mjs",
+    "check": "npm run scan && npm test && npm run lint"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.1",
+    "web-ext": "^10.7.0"
+  }
+}

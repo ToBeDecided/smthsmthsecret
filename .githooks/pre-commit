@@ -1,0 +1,5 @@
+#!/bin/sh
+# Blocks commits that contain secrets, Apps Script /exec URLs, personal Google
+# URLs, or files from reference/ / fixtures/raw/. Enabled by `npm install`
+# (which runs `git config core.hooksPath .githooks`).
+exec node "$(git rev-parse --show-toplevel)/scripts/scan-secrets.mjs" --staged

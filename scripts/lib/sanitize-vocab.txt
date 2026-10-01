@@ -1,0 +1,56 @@
+# Words that may survive sanitizing. Anything else in page text, attribute
+# text, or JSON strings is replaced with a placeholder. Keep this list to UI
+# labels, LSAT metadata, and question-type names: never add words from a
+# question stem, passage, answer choice, explanation, or a person's name.
+# One entry per line; case-insensitive; multi-word entries are split.
+
+# LSAT structure / metadata
+lsat lsac preptest preptests pt pts test tests exam section sections question questions q qs
+logical reasoning reading comprehension analytical analytics games game lr rc ar lg
+drill drills problem problems set sets practice timed untimed timer time times timing pace
+blind review br first pass pass flagged flag flags unflagged bookmark bookmarked
+result results score scores scaled raw percentile accuracy correct incorrect wrong right
+answer answers answered unanswered skipped skip choice choices selected your you my
+difficulty difficult easy easier medium hard harder hardest very level levels star stars
+type types category categories subtype tag tags family families stimulus stem passage
+explanation explanations video videos lesson lessons watch read
+attempt attempts attempted completed complete incomplete in progress started finished
+date dates day days today yesterday ago minute minutes min mins m second seconds sec secs s hour hours hr hrs h avg average median total overall
+number no of out and or the a an to for on at by with vs per all any none not
+module modules official prep demon sage
+
+# Question types (LR)
+flaw flaws descriptive weaken weakening strengthen strengthening sufficient necessary assumption assumptions
+must be true mbt most strongly supported mss support supported inference inferences infer
+principle principles apply applied identify conform conforms parallel parallelism reasoning method methods
+role argument part main point conclusion disagreement disagree agree agreement issue
+paradox resolve resolution explain discrepancy evaluate evaluation cannot could false except
+technique structure argumentative
+
+# Question types (RC)
+purpose primary author attitude tone organization function analogy
+extend extension specific detail details comparative compare passages
+
+# Question types (AR)
+ordering grouping sequencing hybrid in-out acceptability substitution
+cannot-be-true must-be-false could-be-true conditional global local
+
+# UI chrome
+next previous prev back continue submit save saved close open show hide view more less
+home dashboard account settings profile help log logout login sign out in menu
+filter filters sort sorted all none clear reset search
+analytics report reports history review reviewing reviewed summary details overview
+status new done start resume retry redo again mark marked unmark marked
+note notes comment comments journal
+of on off yes no true false null undefined na n/a
+am pm jan feb mar apr may jun jul aug sep sept oct nov dec
+january february march april june july august september october november december
+mon tue wed thu fri sat sun monday tuesday wednesday thursday friday saturday sunday
+
+# Function words (only ever kept inside short, all-allowlisted strings)
+is are was were be been being this that these those it its as from than has have had
+do does did if then so but which what when where who how why can will would should may might
+i me we our us he she they them their there here up down into over under about after before
+
+# Platform names
+7sage lsatdemon lawhub khan

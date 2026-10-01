@@ -3,10 +3,12 @@
 # reference/     : your Apps Script + sheet export (account details)
 # fixtures/raw/  : saved 7Sage / LSAT Demon pages (licensed LSAT content,
 #                  your name, email, user IDs, session tokens)
+# fixtures/README.md : your list of page URLs (contains account/attempt IDs)
 # Only fixtures/clean/ (produced by `npm run sanitize`) is committed.
 # ---------------------------------------------------------------------------
 /reference/
 /fixtures/raw/
+/fixtures/README.md
 /fixtures/*.zip
 
 # clasp stores your script ID and OAuth tokens in these
